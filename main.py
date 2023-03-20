@@ -1,3 +1,4 @@
+"""Module takes in array input and returns sorted squared array output"""
 def sorted_squared_array(array):
     """
     function returns sorted squared array
