@@ -1,6 +1,4 @@
-"""Test py fuction"""
 import unittest
-"""test module."""
 from main import sorted_squared_array
 
 
