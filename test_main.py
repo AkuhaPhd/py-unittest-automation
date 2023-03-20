@@ -1,11 +1,9 @@
+"""Test py fuction."""
 import unittest
 from main import sorted_squared_array
 
 
 class TestMLApi(unittest.TestCase):
-    """
-    test main py file.
-    """
     def test_sorted_squared_array(self):
         """
         Testing end to end api feature detection module hit all relevant feature detection
