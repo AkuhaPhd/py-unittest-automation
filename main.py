@@ -7,9 +7,6 @@ def sorted_squared_array(array):
     return newarray
 
 if __name__ == "__main__":
-    """
-    test function
-    """
     arr = [1, 2, 3, 5, 6, 8]
     out = sorted_squared_array(arr)
     print(arr)
