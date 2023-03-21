@@ -34,15 +34,12 @@ jobs:
       run: |
         python -m unittest -v
         coverage run -m unittest
-        coverage report
+        coverage report -m
         coverage html
+    - name: Coverage Badge
+      uses: tj-actions/coverage-badge-py@v2
     - name: Archive code coverage html report
       uses: actions/upload-artifact@v2
       with:
         name: code-coverage-report
         path: htmlcov
-    - name: Comment coverage
-      uses: orgoro/coverage@v3
-      with:
-        coverageFile: htmlcov
-        token: ${{ secrets.GITHUB_TOKEN }}
