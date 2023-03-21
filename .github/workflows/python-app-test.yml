@@ -28,16 +28,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest pytest-cov coverage
+        pip install flake8 pytest pytest-cov
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Unit Tests and generate coverage report
       run: |
         python -m unittest -v
-        pytest --cov-report xml:cov.xml
-        pytest --cov-report lcov:cov.info
-        pytest --cov=. > pytest-coverage.txt
-        coverage run -m unittest
-        coverage report -m
-        coverage html
+        pytest --cov-report=lcov:cov.info
+        pytest --cache-clear --cov=. > pytest-coverage.txt
     - name: Comment coverage
       uses: coroo/pytest-coverage-commentator@v1.0.2
