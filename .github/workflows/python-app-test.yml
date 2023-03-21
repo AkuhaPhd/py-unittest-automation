@@ -45,3 +45,4 @@ jobs:
       uses: orgoro/coverage@v3
       with:
         coverageFile: htmlcov
+        token: ${{ secrets.GITHUB_TOKEN }}
