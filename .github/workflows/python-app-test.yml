@@ -39,7 +39,7 @@ jobs:
         coverage report -m
         coverage html
     - name: Comment coverage
-      uses: coroo/pytest-coverage-commentator@v1.0.2
+      uses: orgoro/coverage@v3
       with:
           coverageFile: cov.xml
           token: ${{ secrets.GITHUB_TOKEN }}
