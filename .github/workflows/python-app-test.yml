@@ -35,14 +35,14 @@ jobs:
         python -m unittest -v
         coverage run -m unittest
         coverage report
-        coverage html
-    - name: Archive code coverage html report
+        coverage xml
+    - name: Archive code coverage xml report
       uses: actions/upload-artifact@v2
       with:
         name: code-coverage-report
-        path: htmlcov
+        path: xmlcov
     - name: Comment coverage
       uses: orgoro/coverage@v3
       with:
-        coverageFile: htmlcov
+        coverageFile: xmlcov
         token: ${{ secrets.GITHUB_TOKEN }}
