@@ -41,3 +41,7 @@ jobs:
       with:
         name: code-coverage-report
         path: htmlcov
+    - name: Comment coverage
+      uses: orgoro/coverage@v3
+      with:
+        coverageFile: htmlcov
