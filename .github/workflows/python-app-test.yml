@@ -33,13 +33,10 @@ jobs:
     - name: Run Unit Tests and generate coverage report
       run: |
         python -m unittest -v
-        pytest --cov-report xml
-        pytest --cov-report lcov
+        pytest --cov-report xml:cov.xml
+        pytest --cov-report lcov:cov.info
         coverage run -m unittest
         coverage report -m
         coverage html
-    - name: Archive code coverage html report
-      uses: actions/upload-artifact@v2
-      with:
-        name: code-coverage-report
-        path: htmlcov
+    - name: Comment coverage
+      uses: coroo/pytest-coverage-commentator@v1.0.2
