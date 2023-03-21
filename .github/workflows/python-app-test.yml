@@ -35,7 +35,7 @@ jobs:
         python -m unittest -v
         pytest --cov-report xml:cov.xml
         pytest --cov-report lcov:cov.info
-        pytest --cov-report > pytest-coverage.txt
+        pytest --cov=. > pytest-coverage.txt
         coverage run -m unittest
         coverage report -m
         coverage html
